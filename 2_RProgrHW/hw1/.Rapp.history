@@ -1,0 +1,84 @@
+load(".RData")
+dir()
+x<-4
+class(x)
+x <- c(4, "a", TRUE)
+class(x)
+x <- c(1,3, 5)
+y <- c(3, 2, 10)
+cbind(x, y)
+class(cbind(x, y))
+x <- list(2, "a", "b", TRUE)
+x[[2]]
+x[2]
+x<-1:4
+x
+y<-2:3
+y
+x+y
+x <- c(3, 5, 1, 10, 12, 6)
+x
+x[x < 6] <- 0
+x
+data<-read.csv("hw1_data.csv")
+data.entry
+head(data)
+data
+con<-file("hw1_data.csv", "r")
+2data<-readLines(con, 2)
+data2<-readLines(con, 2)
+data2
+data2<-readLines(con, 3)
+data2
+oz<-data["Ozone"]
+oz
+bad<-is.na(oz)
+oz_no_na<-oz[!bad]
+oz_no_na
+oz_no_na.length
+length(oz_no_na)
+153-116
+sum(oz_no_na)
+sum(oz_no_na) / 116
+d<-data["Ozone">31]
+d
+good<-oz>31
+good
+data[good]
+data[good, ]
+data[data$Ozone>31]
+data[data$Ozone>31, ]
+data
+data[(data$Ozone!=NA)&(data$Ozone>31), ]
+data[(data$Ozone!=NA)|(data$Ozone>31), ]
+d<-data[(data$Ozone>31)&(data$Temp>90), ]
+d
+good <- complete.cases(d)
+d[good, ]
+dd<-d[good, ]
+dd["Solar.R"]
+sum(dd["Solar.R"])
+sum(dd["Solar.R"]) / length(dd["Solar.R"])
+length(dd["Solar.R"])
+dd_v<-as.vector(dd["Solar.R"])
+dd_v
+length(dd_v)
+dd_v<-as.vector(dd$Solar.R)
+dd_v
+sum(dd_v) / length(dd_v)
+dd<-data[data$Month == 6]
+dd<-data[data$Month == 6, ]
+dd
+dd_v<-as.vector(dd$Temp)
+dd_v
+sum(dd_v) / length(dd_v)
+dd<-data[data$Month == 5, ]
+dd
+dd_v<-as.vector(dd$Ozone)
+dd_v
+max(dd_v)
+sum(dd_v)
+bad<-is.na(dd_v)
+good_dd<-dd_v[!bad]
+good_dd
+max(good_dd)
